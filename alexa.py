@@ -43,17 +43,13 @@ def run_alexa():
     elif 'time' in command:
         time = datetime.datetime.now().strftime('%I:%M %p')
         talk('Current time is ' + time)
-    elif 'who the heck is' in command:
-        person = command.replace('who the heck is', '')
+    elif 'who is' in command:
+        person = command.replace('who is', '')
         info = wikipedia.summary(person, 1)
         print(info)
         talk(info)
-    elif 'created' in command:
+    elif 'created you' in command:
         talk('I was created by Upesh')
-    elif 'date' in command:
-        talk('sorry, I am commited to Upesh')
-    elif 'are you single' in command:
-        talk('I am in a relationship with Upesh')
     elif 'joke' in command:
         talk(pyjokes.get_joke())
     else:
